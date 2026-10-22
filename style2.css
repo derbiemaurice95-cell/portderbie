@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Derbie Maurice – Resume</title>
+  <style>
+    /* ---------- Colors ---------- */
+    :root {
+      --black: #151515;
+      --red: #b3122b;
+      --gray: #5a5a5a;
+      --line: #e3e3e3;
+      --paper: #ffffff;
+      --bg: #eceff1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 2.5rem 1rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--black);
+      background: var(--bg);
+    }
+
+    /* ---------- Page ---------- */
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+      border-top: 6px solid var(--black);
+    }
+
+    header,
+    main {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      padding-top: 2.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px solid var(--red);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    address {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.5rem;
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    address p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--gray);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--red);
+    }
+
+    /* ---------- Main ---------- */
+    main {
+      padding-top: 0.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    section {
+      margin-top: 1.75rem;
+    }
+
+    h2 {
+      margin: 0 0 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background: var(--red);
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    p {
+      margin: 0 0 0.75rem;
+    }
+
+    /* ---------- Skills ---------- */
+    #skills ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.35rem 1.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #skills li {
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    #skills li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+    }
+
+    /* ---------- Experience & Education entries ---------- */
+    article {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    article h3 {
+      grid-column: 1;
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    article .org {
+      grid-column: 1;
+      margin: 0;
+      font-weight: 600;
+      color: var(--red);
+    }
+
+    article .date {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    article ul {
+      grid-column: 1 / -1;
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    article li {
+      margin-bottom: 0.25rem;
+    }
+
+    article li::marker {
+      color: var(--red);
+    }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 600px) {
+      header,
+      main {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+      }
+
+      article {
+        grid-template-columns: 1fr;
+      }
+
+      article .date {
+        grid-column: 1;
+        grid-row: auto;
+        text-align: left;
+        order: 2;
+      }
+
+      article .org {
+        order: 1;
+      }
+    }
+
+    /* ---------- Print ---------- */
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: none;
+        padding: 0;
+      }
+
+      .page {
+        max-width: none;
+        box-shadow: none;
+      }
+
+      article {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <header>
+      <h1>Derbie Maurice</h1>
+      <address>
+        <p>Brockton, MA 02301</p>
+        <p><a href="mailto:derbiemaurice55@yahoo.com">derbiemaurice55@yahoo.com</a></p>
+        <p><a href="tel:+15085627667">508-562-7667</a></p>
+      </address>
+    </header>
+
+    <main>
+
+      <section id="summary">
+        <h2>Professional Summary</h2>
+        <p>
+          I have a strong desire to learn the skills and strategies of network security, web development,
+          risk assessment, testing, debugging, cryptography, manage VPNs, and all that comes within ensuring
+          comprehensive cyber security to use my personal and to contribute to the success of this course.
+        </p>
+        <p>
+          I am self motivated; able to set effective priorities to achieve immediate and long term goals and
+          meet operational deadlines. I function well independently and as a team member. I adapt easily to
+          new concepts and responsibilities.
+        </p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Patience</li>
+          <li>Privacy/HIPAA Regulations</li>
+          <li>Customer service</li>
+          <li>Multilingual/French, Creole and English</li>
+          <li>Dexterity</li>
+          <li>Computer</li>
+          <li>Attention to details</li>
+          <li>Time Management</li>
+          <li>Data Entry/Excel</li>
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <article>
+          <h3>Homecare Specialist</h3>
+          <p class="org">Professional Care Match, Brockton, MA</p>
+          <p class="date"><time datetime="2025">2025</time> – Present</p>
+          <ul>
+            <li>Housekeeping, errands, compassionate and technical healthcare tending, patient at home safety</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Clinical Care Assistant</h3>
+          <p class="org">Signature Healthcare, Brockton, MA</p>
+          <p class="date"><time datetime="2022">2022</time> – <time datetime="2023">2023</time></p>
+          <ul>
+            <li>Delivered lab specimens and answered patient call lights on the hour, anticipated basic needs, increasing patient satisfaction and maintained safe, clean environment by keeping area neat.</li>
+            <li>Provided general nursing care/ADLs, vital signs, positioning and turning patients</li>
+            <li>Observe and document patients’ physical and emotional condition</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Home Health Aid</h3>
+          <p class="org">FCP Live-In Assisted Living @ Home, Stratford, CT</p>
+          <p class="date"><time datetime="2023">2023</time> – <time datetime="2024">2024</time></p>
+          <ul>
+            <li>Cooked and prepared food for patient orders in an appropriate and timely manner</li>
+            <li>Provided care, housekeeping, errands and companionship to elderly in their homes</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+
+        <article>
+          <h3>Nursing Assistant Training Program</h3>
+          <p class="org">Brockton, MA</p>
+          <p class="date"><time datetime="2022-05">May 2022</time></p>
+          <ul>
+            <li>Home Health Aide Certificate, CPR Certificate</li>
+            <li>Alzheimer’s disease Rehabilitation Certificate</li>
+            <li>Nurse Aide Competency certificate/License</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Construction Education Foundation of GA (CEFGA)</h3>
+          <p class="org">Atlanta, GA</p>
+          <p class="date"><time datetime="2019-09">Sept 2019</time></p>
+          <ul>
+            <li>OSHA 10 Hour Card</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Penn Foster High School, Job Corp</h3>
+          <p class="org">Atlanta, GA</p>
+          <p class="date"><time datetime="2014-08">August 2014</time></p>
+          <ul>
+            <li>GED, Business and Finance Certificate</li>
+          </ul>
+        </article>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

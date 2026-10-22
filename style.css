@@ -1,0 +1,147 @@
+/* ---------- Base ---------- */
+:root {
+  --text: #222;
+  --muted: #555;
+  --accent: #1f4e79;
+  --line: #d9d9d9;
+  --bg: #f4f6f8;
+  --paper: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ---------- Page layout ---------- */
+header,
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 1.5rem 2.5rem;
+}
+
+header {
+  text-align: center;
+  padding-top: 2.5rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+main {
+  padding-bottom: 2.5rem;
+}
+
+/* ---------- Header ---------- */
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+address {
+  font-style: normal;
+  color: var(--muted);
+}
+
+address p {
+  margin: 0.1rem 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Sections ---------- */
+section {
+  margin-top: 1.75rem;
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0 0 0.75rem;
+}
+
+/* ---------- Skills ---------- */
+#skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.4rem 1.5rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+/* ---------- Experience & Education entries ---------- */
+article {
+  margin-bottom: 1.25rem;
+}
+
+article p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+article ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+
+article li {
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  header,
+  main {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  body {
+    background: none;
+    padding: 0;
+  }
+
+  header,
+  main {
+    max-width: none;
+    padding: 0.5rem 0;
+  }
+}
